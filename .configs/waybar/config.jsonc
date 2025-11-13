@@ -1,0 +1,122 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "spacing": 4,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "battery"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M} 󰣇 ",
+        "format-alt": "{:%A, %B %d, %Y (%R)} 󰣇 ",
+        "tooltip-format": "<span background='#000000' foreground='#ff0000' alpha='80%'><tt><small>{calendar}</small></tt></span>",
+        "tooltip": true,
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span background='#000000' foreground='#ffffff' alpha='80%'><b>{}</b></span>",
+                "days": "<span background='#000000' foreground='#ffffff' alpha='80%'><b>{}</b></span>",
+                "weeks": "<span background='#000000' foreground='#cccccc' alpha='80%'><b>W{}</b></span>",
+                "weekdays": "<span background='#000000' foreground='#ffffff' alpha='80%'><b>{}</b></span>",
+                "today": "<span background='#ffffff' foreground='#000000' alpha='90%'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon}",
+        "tooltip": true,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "max-length": 25,
+        "on-click": "kitty --hold -e upower -i $(upower -e | grep BAT)",
+        "format-icons": {
+            "default": [
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ],
+            "charging": [
+                "󰢟",
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ]
+        }
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-ethernet": "󰈀",
+        "format-wifi": "",
+        "format-disconnected": "󰖪",
+        "tooltip-format": " {ifname} via {gwaddr}",
+        "tooltip-format-wifi": "SSID: {essid}\nSignal: {signalStrength}%\nIP: {ipaddr}\n\nUpload Rate:{bandwidthUpBits}\nDownload Rate:{bandwidthDownBits}",
+        "tooltip-format-ethernet": "Connected via {ifname}\nIP: {ipaddr}\n\nUpload Rate:{bandwidthUpBits}\nDownload Rate:{bandwidthDownBits}",
+        "tooltip-format-disconnected": "Device disconnected",
+        "max-length": 50,
+        "on-click": "kitty --hold nmcli device status",
+        "interval": 3
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "",
+        "format-bluetooth-muted": "",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "on-click-right": "blueman-manager",
+        "on-click-middle": "kitty -e bluetoothctl",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    }
+}
