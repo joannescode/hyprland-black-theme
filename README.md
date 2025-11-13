@@ -22,3 +22,20 @@ Este repositório contém minhas customizações pessoais do **Arch Linux** com 
 ## Preview
 
 ![Screenshot do sistema](./screenshot.png)
+
+---
+
+## Temas utilizados já prontos (links úteis)
+- Icones: [Reversal Black](https://www.gnome-look.org/p/1340791)
+- Cursor: [Vimix White](https://www.gnome-look.org/p/1358330)
+- Tema GTK: [Flat Remix](https://www.gnome-look.org/p/1214931)
+- SDDM: [SilentSDDM](https://github.com/uiriansan/SilentSDDM)
+- Plymouth: [Deus EX](https://github.com/adi1090x/plymouth-themes)
+
+## Como utilizar
+1. Git clone no repositório
+2. Copiar e colar configurações em suas respectivas pastas
+3. Editar parâmetros necessários como monitor, bind e localização de diretórios
+4. Instalar as dependências necessárias
+
+*Necessário consultar suas respectivas documentações para ativação via terminal e passagem como default de certos argumentos.*
