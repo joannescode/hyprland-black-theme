@@ -35,6 +35,7 @@ Este repositório contém minhas customizações pessoais do **Arch Linux** com 
 ## Como utilizar
 1. Git clone no repositório
 2. Copiar e colar configurações em suas respectivas pastas
-3. Editar paramêtros necessários como monitor, bind e localização de diretórios.
+3. Editar parâmetros necessários como monitor, bind e localização de diretórios
+4. Instalar as dependências necessárias
 
 *Necessário consultar suas respectivas documentações para ativação via terminal e passagem como default de certos argumentos.*
